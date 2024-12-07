@@ -37,7 +37,7 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.1, random_
 
 # 2. MODEL EĞİTİMİ
 
-mlp_model = MLPClassifier(hidden_layer_sizes=(100,), max_iter=500, random_state=42) #modeli oluştur
+mlp_model = MLPClassifier(hidden_layer_sizes=(100,), max_iter=500, random_state=52) #modeli oluştur
 mlp_model.fit(x_train, y_train) #modeli eğitim verisiyle eğit
 accuracy = mlp_model.score(x_test, y_test) #test verisiyle sınıflandırma yap
 
