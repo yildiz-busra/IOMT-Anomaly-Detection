@@ -23,9 +23,8 @@ df['Protocol'] = label_encoder.fit_transform(df['Protocol'])
 df['Type of attack'] = label_encoder.fit_transform(df['Type of attack'])
 df['Type'] = label_encoder.fit_transform(df['Type'])
 
-# 1.4 normalizasyon
-#numerical_features = ['Source', 'Destination', 'Protocol', 'Length', 'Type', 'Type of attack']  # Add more features if needed
-
+# 1.4 normalizasyon  ---> bu kısmı çıkardım çünkü normalizasyon yapınca çalışmadı
+#numerical_features = ['Source', 'Destination', 'Protocol', 'Length', 'Type', 'Type of attack'] 
 # scaler = StandardScaler()
 # df[numerical_features] = scaler.fit_transform(df[numerical_features])
 
@@ -35,9 +34,6 @@ x = df.drop(columns=['Type of attack']) #özellikler
 
 # 1.6 eğitim ve test verisini ayır
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.1, random_state=42) # 10% test 90% eğitim 
-#print(type(y_train))  # Check type
-#print(y_train.shape)  # Check shape
-#print(y_train[:10])
 
 # 2. MODEL EĞİTİMİ
 
@@ -47,12 +43,12 @@ accuracy = mlp_model.score(x_test, y_test) #test verisiyle sınıflandırma yap
 
 print(f'Model Accuracy: {accuracy * 100:.2f}%')
 
-y_pred = mlp_model.predict(x_test)
-#target_classes = list(label_encoder.classes_)
-
+#confusion matrisi oluştur
+y_pred = mlp_model.predict(x_test) 
 conf_matrix = confusion_matrix(y_test, y_pred)
 print("Confusion Matrix:")
 print(conf_matrix)
+
 
 # class_report = classification_report(y_test, y_pred, target_names=target_classes)
 # print("Classification Report:")
