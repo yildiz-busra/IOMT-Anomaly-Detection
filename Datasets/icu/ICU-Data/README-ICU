@@ -1,0 +1,63 @@
+The ICU data set in this directory is provided for use in 1994 AI in Medicine
+symposium submissions.  Permission is granted to use the data set for other
+research purposes as long as appropriate credit is given as to the source
+(AIM-94 data set provided by Isaac Kohane, MD, PhD, The Children's Hospital,
+Boston, MA).
+
+
+Index:
+------
+
+* Domain-Description: This file describes the basic physiology and patho-
+physiology of ARDS and ventilator management.  In addition, it annotates
+the data provided in the data files.
+
+* Patient-Description: clinical details about the patient.
+
+* Monitor-Data-Codes: description of numeric codes for the data presented
+in the Monitor-Data file.
+
+* Monitor-Data: 120K data file extracted from bedside monitors, covering
+a 12-hr. period of ICU treatment.
+
+* Flowsheet-Data: additional treatment information extracted from paper
+flowsheets (annotated in the Domain-Description file).
+
+* Lab-Data: laboratory results received from the lab computer (annotated
+in the Domain-Description file).
+
+
+Methods:
+--------
+
+You do not need to use all the data in order to participate in AIM-94.  
+Use any subset of the available data from either the ICU data set or the 
+diabetes data set.  Furthermore, do not feel constrained if your methods 
+cannot be applied directly to these data sets.  We will consider submissions
+on related (i.e., clinical data interpretation) topics.  If in doubt,
+consult with us via e-mail at <aim-94@camis.stanford.edu>.
+
+
+The 'Matchmaker' Service:
+-------------------------
+
+We realize that an accurate interpretation of clinical data requires 
+a thorough understanding of the physiological principles and clinical 
+issues involved.  We also realize that many AIM researchers do not 
+have convenient access to medical expertise, and that a symposium 
+focusing on a clinical theme may catch several parties at a disadvantage.  
+Conversely, some clinical researchers may be interested in participating 
+but may not have collaborators on the computer science end of the field.  
+To offset such disadvantages, we will provide a simple 'Matchmaker' 
+service for AIM-94.  The purpose of this service is to establish a medium 
+by which researchers can seek collaborators of complementary background 
+and interests for AIM-94 participation and beyond.
+
+If you are interested in participating in this program, send a
+one-paragraph description of your background, research interests, and the
+type of collaboration you are pursuing to <aim-94@camis.stanford.edu> by
+September 20th.  We will collate these entries and distribute the whole
+list to all participants of the program.  It will be the participants' 
+responsibility to contact others to discuss and establish collaborative 
+efforts; AIM-94 organizers will solely act as mediators.
+

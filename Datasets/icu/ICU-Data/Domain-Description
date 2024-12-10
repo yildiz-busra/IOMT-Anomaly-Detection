@@ -1,0 +1,339 @@
+CLINICAL AND PHYSIOLOGICAL BACKGROUND FOR THE ICU DATA SET
+
+This document is intended to help researchers with non-medical 
+backgrounds to understand the problem domain and interpret the data 
+covered in the ICU data set.  The medical information presented here is 
+not complete and may not represent all pertinent points of view.  We 
+aimed for simplicity and tried to avoid unnecessary detail; interested 
+researchers can solicit our help or consult fellow clinicians for further 
+references when necessary.
+
+Serdar Uckun, AIM-94 Co-Chair
+8/27/1993
+aim-94@camis.stanford.edu
+
+1. PROBLEM DOMAIN
+
+Adult respiratory distress syndrome (ARDS) is a pathophysiological 
+entity or complex which is characterized by acute and diffuse lung injury.  
+The lung injury presents with several typical findings which make up a 
+clinical syndrome.  The clinical definition includes respiratory distress, 
+tachypnea (increased respiratory rate), severe hypoxemia (low oxygen 
+partial pressures in arterial blood due to improper oxygenation of blood 
+in the lungs), decreased pulmonary compliance, and specific X-ray 
+findings.  The major mechanism behind these symptoms is increased 
+permeability of lung capillary blood vessels, resulting in the collection of 
+protein-rich fluids in alveolar spaces (the gas exchange compartments of 
+the lung), thus limiting the surface area for gas exchange and stiffening 
+the lungs in general.  The syndrome may be triggered by a variety of 
+causes such as trauma, sepsis, aspiration, fractures, burns, certain drug 
+overdoses, smoke inhalation, etc.  Although the definition of the 
+syndrome varies from site to site, all definitions refer to a group of 
+patients requiring mechanical ventilation with high fractions of inspired 
+oxygen.  An estimated 150,000 cases occur each year in the U.S. alone 
+and the mortality, despite significant advances, is over 50%.  As a final 
+note, ARDS is a misnomer since it occurs in all age groups (the case 
+presented here is 8.5 months old).  
+
+2. TREATMENT
+
+The treatment of ARDS includes assisted ventilation, cardiovascular 
+support, and treatment of the underlying cause which triggered ARDS.  
+
+2.1. Assisted Ventilation
+
+The increased compliance of lungs  and decreased surface area for gas 
+exchange affects two major functions of the respiratory system: 1) 
+oxygenation (uptake of oxygen from the air) and 2) ventilation (removal 
+of carbon dioxide from blood).  Hence, the principal findings include low 
+arterial O2 partial pressure (PaO2), high arterial CO2 partial pressure 
+(PaCO2), and low blood pH.  The last problem, referred to as acidosis 
+(and, in this case, as "respiratory acidosis"), is caused by the excess CO2 
+in the blood which maintains an equilibrium with carbonic acid.  
+
+Mechanical ventilation aims to correct all three problems.  A mechanical 
+ventilator is a device which partially or completely takes over the duty 
+of ventilating a patient's lungs.  There are several methods by which this 
+may be achieved; we will focus on the method used on the patient 
+discussed in this data set.  In this case, a mode called "continuous 
+mandatory ventilation" (or controlled mechanical ventilation) is used 
+(CMV).  The mechanical ventilator used here is pressure-limited and 
+time-cycled.  During the inspiratory phase of a breathing cycle, the 
+ventilator delivers a constant flow of gas until a preset pressure limit is 
+reached.  This limit is referred to as peak inspiratory pressure (PIP).  
+From there on, the ventilator maintains that pressure in the airways until 
+the end of the inspiration phase.  Expiration is passive; the recoil 
+tendency of the lungs helps expel the gas out.  However, the ventilator 
+maintains a preset positive pressure during expiration in order to 
+prevent the alveolar spaces from collapsing.  This preset limit is referred 
+to as positive end-expiratory pressure (PEEP).  The respiratory rate 
+(breaths per minute) and the inspiratory time (or the 
+inspiratory/expiratory time ratio (I:E)) are set on the ventilator.  A final 
+setting on the ventilator is the volume fraction of inspired oxygen (FiO2), 
+which is almost always maintained at levels above the atmospheric O2 
+fraction of 21%.  In this mode, tidal volume (TV -- the volume of gas 
+circulated with each breath) is a dependent parameter; it depends on the 
+pressure differential and the compliance of the lungs.
+
+2.1.1. Oxygenation
+
+The uptake of O2 from the inspired gas into blood is influenced by 
+several aspects of assisted ventilation:
+
+* An increase in FiO2 almost invariably increases oxygenation (however, 
+high FiO2s are associated with toxic effects and thus the extended use of 
+high FiO2s is not always desirable).
+
+* An increase in mean airway pressure increases oxygenation.  Mean 
+airway pressure is the average pressure exerted in the airways during the 
+complete inspiration/expiration cycle.  Mean airway pressure is 
+positively correlated with the pressure differential (PIP - PEEP), the 
+baseline pressure (PEEP), and with the I:E ratio.  A mathematical 
+representation is:
+
+	MAP = K * (PIP - PEEP) * (IT/(IT + ET)) - PEEP   
+
+where K is a constant, IT and ET are inspiratory and expiratory times, 
+respectively.
+
+Although higher pressures seem desirable, there are adverse effects 
+associated with the use of high pressures such as trauma to the lungs 
+and interference with cardiovascular function (increased pressure in the 
+chest cavity --> pressure on vessels returning blood to the heart).
+
+Another parameter, arterial O2 Saturation (measured as a percentage), 
+correlates positively with PaO2.  O2 SAT is clinically important because 
+it is easier to measure than PaO2 (which typically requires arterial blood 
+gas measurements, a costly and risky procedure).  Treatment often aims 
+to keep O2 SATs around 93-95% whereas the normal value for a healthy 
+person is close to 100%.  Normal PaO2 in a healthy person is around 
+100 mmHg; adequate oxygenation support targets PaO2 values around 
+70-80 mmHg.
+
+2.1.2. Ventilation
+
+Rate of removal of CO2 from the blood positively correlates with minute 
+ventilation, which is calculated as tidal volume * respiratory rate (RR).  
+Tidal volume is positively influenced by the pressure differential (PIP - 
+PEEP) and lung compliance.  Normal PaCO2 values are between 35-45 
+mmHg; patients can typically tolerate mild hypercapnia (slightly higher 
+values) if high peak pressures or respiratory rates are not desirable.
+
+2.1.3. Acid-Base Balance
+
+In many cases, correction of the ventilation problem (removal of excess 
+CO2) also corrects the respiratory acidosis problem.  Normal arterial 
+blood pH is around 7.38 to 7.42; lower values constitute the acidosis 
+range.
+
+2.2. Cardiovascular Support
+
+Correction of oxygenation only solves half of the problem of oxygen 
+delivery.  Another equally important aspect of oxygen delivery to tissues 
+is the pumping ability of the heart (O2 delivery is the product of arterial 
+blood O2 content and cardiac output).  The level of cardiovascular 
+support depends on preexisting and underlying conditions.  In general, 
+four classes of measures may be useful:
+
+1. Increase the O2-carrying capacity of blood (increase hemoglobin 
+concentration by means of transfusions).
+2. Increase preload (i.e., venous return to the heart) by means of fluid 
+support.
+3. Increase the pumping ability of the heart (use of inotropic agents such 
+as dopamine).
+4. Decrease afterload (i.e., the resistance against which the heart has to 
+pump) either by using vasodilators (drugs that relax smooth muscles in 
+blood vessel walls) or as a side effect of improved O2 delivery to tissues 
+(increased O2 utilization --> increased local blood circulation  --> 
+vasodilation).
+
+2.3 Other Treatments
+
+Other treatments typically include corrective measures for the triggering 
+cause and other coexisting problems such as infections and other organ 
+failures.  Mechanically ventilated patients are often sedated and muscle-
+relaxed in order to reduce their own respiratory efforts.  This helps 
+further minimize their oxygen demands and reduce the pressure support 
+required to ventilate the patient against the resistance of their own 
+respiratory muscles.  Finally, treatment often includes the use of 
+bronchodilating agents (drugs which relax airways).
+
+
+3. SPECIFICS ABOUT THE PRESENTED CASE
+
+3.1. Patient Description
+
+The patient presents as a typical ARDS case which follows a congenital 
+bile duct anomaly, high-risk corrective surgical procedure, infection of the 
+biliary tract and the liver, and sepsis (spread of the infection into the 
+bloodstream).  The problem is complicated with  coagulation defects, 
+most probably induced by the liver insufficiency.  The treatment listed in 
+the patient description includes nystatin (an anti-fungal agent to prevent 
+opportunistic fungal infections), ativan (a tranquilizer), bladder 
+irrigation to prevent infections, nebulized ventolin (a bronchodilator), 
+and maalox (an antacid).
+
+3.2. Monitor Data
+
+This large set of data covers a period of approx. 12 hours during the ICU 
+treatment of this patient under mechanical ventilation.  Time-stamped 
+data points represent various monitored parameters and ventilator 
+settings.  The data codes are included in a separate file (Monitor-Data-
+Codes).  Blood pressures, O2 SATs, and heart rate are monitored 
+continuously (approx. once every fifteen seconds).  The data presented 
+in the Monitor-Data file is compressed; values for continuously 
+monitored parameters remain steady between consecutive recorded 
+measurements and thus the lack of recorded measurements should not be 
+interpreted as lack of data.  The ventilator settings (FiO2, RR, PIP, and 
+PEEP) are only recorded in case of a setting change.  Other dependent 
+parameters (mean airway pressure and tidal volume) are recorded 
+occasionally.
+
+There are two sources for heart rate in the data file: ECG and the blood 
+pressure monitor.  In case of conflicts, the heart rate reading coming from 
+the ECG monitor is more reliable.
+
+Two modes of ventilation are used on this patient.  In addition to CMV, 
+the patient is disconnected from the ventilator approximately once every 
+two hours and ventilated using a hand bag for approx. 10 to 15 minutes 
+per session.  During these sessions, the FiO2 is increased from 50% to 
+100% (which results in temporary increases in O2 saturation).  The 
+purpose of these sessions is to deliver a bronchodilator in aerosol form 
+(ventolin) directly to the airways.  This drug dilates the airways and 
+thus reduces the resistance to gas flow, which may result in an increase 
+in mean airway pressures.  In addition, this process helps "recruit" some 
+previously-occluded alveolar spaces and thus improve ventilation. The 
+effects of ventolin start appearing after 5 minutes and typically last 1.5-
+2 hours.
+
+3.3. Flowsheet Data
+
+The flowsheet data include the treatment records obtained from patient 
+flowsheets during the same period of time.  All mentioned drugs are 
+administered via drip infusion; administration and doses should be 
+interpreted to persist throughout the record unless a new order is 
+indicated.  The fluid balance (important for preload considerations) may 
+be calculated by integrating the fluid input and output rates over this 
+period.  The drugs infused during this period are:
+
+* terbutaline: a bronchodilator
+* pavulon: a neuromuscular blocking agent which is used to paralyze the 
+patient to aid mechanical ventilation 
+* versed: a short-acting sedative from the benzodiazepine family
+* fentanyl: a potent narcotic analgesic used for sedation and analgesia 
+* dopamine: a positive inotropic agent (i.e., used to increase cardiac 
+contractility).  Note that dopamine is used over a wide range of doses 
+over this time period.  In general, at doses below 2 mcg/kg/min, it is 
+used to increase blood flow to kidneys, thus increasing renal blood flow 
+and urine output.  At moderate levels (2-5 mcg/kg/min), it increases 
+cardiac output, stroke volume, and heart rate with no effect on systemic 
+vascular resistance or blood pressure.  At levels in excess of 5-10 
+mcg/kg/min, it increases systemic arterial pressure in addition to its 
+inotropic effects.
+
+3.4. Lab Data
+
+The following list presents the lab codes and the normal ranges for each 
+parameter.  Note that "normal" values vary from one laboratory to 
+another and thus should not be interpreted as absolute truth.  Where 
+available, listed normal values are for 1/2 to 1 year old females.
+
+3.4.1. Coagulation Tests
+
+FIB			Plasma fibrinogen (normal: 170-340 mg/dl) A 
+			protein required for coagulation.
+
+PLT			Platelet count (normal: > 150,000/mm3). Low 
+			values indicate a coagulation defect or excessive 
+			loss of platelets (continued bleeding, etc.).
+
+PT, PT1, PT2		Prothrombin time (normal control values are 
+			indicated by PT; patient's values are listed as 
+			PT1 or PT2; in seconds).  Elevated values indicate 
+			coagulation defects.
+
+PTT, PTT1, PTT2		Partial thromboplastin time (same nomenclature as 
+			PT).  Elevated values indicate coagulation defects.
+
+
+3.4.2. Blood Chemistry
+
+ALB			Serum albumin (normal: 3.5-5.5 g/dl)
+
+ALT			Alanine aminotransferase (SGPT) (normal: 10-40 U/L)  
+			High levels have a similar significance as for AST.
+
+AST			Aspartate aminotransferase (SGOT) (normal: 10-40 U/L) 
+			High levels of this enzyme indicate liver cell damage.
+
+BILITOTAL		Total bilirubin (normal: 0.3-1.0 mg/dl)
+
+BUN			Blood urea nitrogen.  A measurement of kidney 
+			function (normal: 6-26 mg/dl).  Increased levels 
+			indicate renal insufficiency.
+
+CL			Serum chloride (normal: 98-106 mEq/L)
+
+CR			Serum creatinine (normal:0.5-1.5 mg/dl) another 
+			indicator of renal function; high levels indicate 
+			renal insufficiency.
+
+GLU			Blood glucose (normal (fasting): 70-110 mg/dl)
+
+IONCA			Serum ionized calcium (normal: 2.3-2.8 mEq/L)
+
+K			Serum potassium (normal: 3.5-5 mEq/L)
+
+MG			Serum magnesium (normal: 1.5-2.5 mEq/L)
+
+NA			Serum sodium (normal: 136-145 mEq/L)
+
+NH3			Whole blood ammonia (normal: 80-110 mcg/dl) 
+			Elevated in patients with liver disease.
+
+PHOS			Serum inorganic phosphate (normal: 3-4.5 mg/dl)
+
+TP			Serum total protein (normal: 5.5 - 8 g/dl)
+
+TRIG			Serum triglycerides (normal: 40-130 mg/dl)
+
+3.4.3. Hematologic Tests
+
+HCT			Hematocrit (normal: 35-45%) Indicates the 
+			concentration of red cells in blood.
+
+HGB			Hemoglobin concentration (normal: 10-14.5 g/dl) 
+			An indicator of the oxygen-carrying capacity of 
+			blood.
+
+MCH			Mean corpuscular hemoglobin (normal: 27 pg.)
+
+MCHC			Mean corpuscular hemoglobin concentration 
+			(normal:34 g/dl )
+
+MCV			Mean corpuscular (i.e., red blood cell) volume 
+			(normal: 80 fl.)
+
+RBC			Red blood cell count (normal: 3.8-5.0 million/mm3)
+
+WBC			White blood cell count (normal: 4,500-10,000/mm3)
+
+3.4.4. Blood Gas Measurements
+
+BICARBART		Arterial sodium bicarbonate concentration (normal: 
+			21-27 mEq/L)
+
+CO2 			Plasma CO2 content (normal: 21-30 mEq/L)  
+
+O2SATART		Arterial O2 saturation as measured via blood gas 
+			(normal: 95-99%)
+
+PCO2ART			PaCO2 measured via arterial blood gas analysis 
+			(normal: 35-45 mmHg)
+
+PHART			Arterial pH (normal: 7.38-7.42)
+
+PO2ART			PaO2 measured via arterial blood gas analysis 
+			(normal: 95-105 mmHg)
+
+

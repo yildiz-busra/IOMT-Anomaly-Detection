@@ -1,0 +1,20 @@
+1	Ventilation Mode
+		0: Pressure-controlled
+		1: Hand bagging
+4	Mainframe alarms suspended
+7	Trace 1 ECG -> Heart rate 			(bpm)
+19	Arterial pressure - Mean 			(mm Hg)
+20	Arterial pressure - Systolic 			(mm Hg)
+21	Arterial pressure - Diastolic 			(mm Hg)
+22	Arterial Heart rate 				(bpm)
+59	Arterial O2 saturation 				(%)
+76	Volume fraction of inspired oxygen (FiO2) 	(%)
+80	Ventilator Data - Respiration rate 		(breaths/min)
+81	Ventilator Data - Tidal volume 			(cc/breath)
+83	Ventilator Data - PIP 				(cm H2O)
+84	Ventilator Data - Mean Airway Pressure 		(cm H2O)
+85	Ventilator Data - PEEP 				(cm H2O)
+
+
+
+
