@@ -14,10 +14,6 @@ df = pd.read_csv('wustl-ehms-2020_with_attacks_categories.csv')
 
 # 1.2 eğitimde kullanılmayacak sütünları çıkar
 df = df.drop(columns=['Dir'])  
-# #, 'SrcAddr', 'DstAddr', 'Dport', 'SrcBytes', 'DstBytes', 'SrcGap',
-#                       'DstGap', 'SIntPkt', 'sMaxPktSz', 'dMaxPktSz', 'sMinPktSz', 'dMinPktSz',
-#                       'Trans', 'TotPkts', 'TotBytes', 'Loss', 'pDstLoss', 'Rate', 'SrcMac', 'DstMac',
-#                        'Attack Category' ])  
 
 # 1.3 ketegorik verileri etiketle (label encoding)
 label_encoder = LabelEncoder()
