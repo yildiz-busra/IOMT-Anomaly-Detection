@@ -4,7 +4,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import classification_report, confusion_matrix
 
-
 df = pd.read_csv('wustl-ehms-2020_with_attacks_categories.csv')
 
 # 1. VERİ ÖNİŞLEME
@@ -14,10 +13,11 @@ df = pd.read_csv('wustl-ehms-2020_with_attacks_categories.csv')
 # df = df.fillna(df.median()) # boş değerleri sütunun medyanı ile doldur
 
 # 1.2 eğitimde kullanılmayacak sütünları çıkar
-df = df.drop(columns=['Dir', 'SrcAddr', 'DstAddr', 'Dport', 'SrcBytes', 'DstBytes', 'SrcGap',
-                      'DstGap', 'SIntPkt', 'sMaxPktSz', 'dMaxPktSz', 'sMinPktSz', 'dMinPktSz',
-                      'Trans', 'TotPkts', 'TotBytes', 'Loss', 'pDstLoss', 'Rate', 'SrcMac', 'DstMac',
-                       'Attack Category' ])  
+df = df.drop(columns=['Dir'])  
+# #, 'SrcAddr', 'DstAddr', 'Dport', 'SrcBytes', 'DstBytes', 'SrcGap',
+#                       'DstGap', 'SIntPkt', 'sMaxPktSz', 'dMaxPktSz', 'sMinPktSz', 'dMinPktSz',
+#                       'Trans', 'TotPkts', 'TotBytes', 'Loss', 'pDstLoss', 'Rate', 'SrcMac', 'DstMac',
+#                        'Attack Category' ])  
 
 # 1.3 ketegorik verileri etiketle (label encoding)
 label_encoder = LabelEncoder()
@@ -26,9 +26,9 @@ for col in categorical_columns:
     df[col] = label_encoder.fit_transform(df[col])
 
 # 1.4 normalizasyon  ---> bu kısmı çıkardım çünkü normalizasyon yapınca çalışmadı
-#numerical_features = ['Source', 'Destination', 'Protocol', 'Length', 'Type', 'Type of attack'] 
-# scaler = StandardScaler()
-# df[numerical_features] = scaler.fit_transform(df[numerical_features])
+numerical_columns = df.drop(columns=['Label']).select_dtypes(include=['int64', 'float64']).columns
+scaler = StandardScaler()
+df[numerical_columns] = scaler.fit_transform(df[numerical_columns])
 
 # 1.5 veriyi özellik ve hedef (feature-target) diye ayır
 X = df.drop(columns=['Label'])
