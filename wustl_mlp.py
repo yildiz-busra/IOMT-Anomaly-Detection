@@ -34,7 +34,6 @@ y = df['Label']
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_state=42)
 
 # 2. MODEL EĞİTİMİ
-
 mlp_model = MLPClassifier(hidden_layer_sizes=(100,), max_iter=500, random_state=52) #modeli oluştur
 mlp_model.fit(X_train, y_train) #modeli eğitim verisiyle eğit
 accuracy = mlp_model.score(X_test, y_test) #test verisiyle sınıflandırma yap
@@ -53,7 +52,7 @@ print("Classification Report:")
 print(class_report)
 
 plt.plot(mlp_model.loss_curve_, label='Training Loss')
-plt.title('Training Loss over Epochs')
+plt.title('Training Loss')
 plt.xlabel('Epochs')
 plt.ylabel('Loss')
 plt.legend()
