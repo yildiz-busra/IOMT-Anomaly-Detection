@@ -3,6 +3,7 @@ from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import classification_report, confusion_matrix
+import matplotlib.pyplot as plt
 
 df = pd.read_csv('wustl-ehms-2020_with_attacks_categories.csv')
 
@@ -47,7 +48,14 @@ print("Confusion Matrix:")
 print(conf_matrix)
 
 
-# class_report = classification_report(y_test, y_pred, target_names=target_classes)
-# print("Classification Report:")
-# print(class_report)
+class_report = classification_report(y_test, y_pred)
+print("Classification Report:")
+print(class_report)
+
+plt.plot(mlp_model.loss_curve_, label='Training Loss')
+plt.title('Training Loss over Epochs')
+plt.xlabel('Epochs')
+plt.ylabel('Loss')
+plt.legend()
+plt.show()
 
