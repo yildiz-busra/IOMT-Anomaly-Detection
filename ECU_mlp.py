@@ -43,7 +43,6 @@ x = df.drop(columns=['Type of attack']) #özellikler
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42) # 10% test 90% eğitim 
 
 # 2. MODEL EĞİTİMİ
-
 mlp_model = MLPClassifier(hidden_layer_sizes=(100,), max_iter=500, random_state=52) #modeli oluştur
 mlp_model.fit(x_train, y_train) #modeli eğitim verisiyle eğit
 accuracy = mlp_model.score(x_test, y_test) #test verisiyle sınıflandırma yap
@@ -63,7 +62,7 @@ print(class_report)
 
 # Plot the loss curve
 plt.plot(mlp_model.loss_curve_, label='Training Loss')
-plt.title('Training Loss over Epochs')
+plt.title('Training Loss')
 plt.xlabel('Epochs')
 plt.ylabel('Loss')
 plt.legend()
